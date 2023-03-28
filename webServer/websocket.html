@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Qt WebSocket</title>
+</head>
+
+<body>
+    <style type="text/css">
+        .home {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        nav {
+            width: 100%;
+            height: 64px;
+            /*定位方式: 固定位置*/
+            position: absolute;
+            top: 0;
+            background-color: rgb(121, 26, 230);
+            z-index: 1000;
+        }
+        /*找到nav标签下 div标签后代选择器 ，可以找到nav下的所有的div标签*/
+        
+        nav div {
+            width: 1000px;
+            height: 64px;
+            /*块元素居中*/
+            margin: 0 auto;
+        }
+        
+        #logo {
+            width: 216px;
+            /*相对定位,位置微调*/
+            position: absolute;
+            top: 7px;
+            left: 15px;
+        }
+        
+        .la {
+            color: rgb(27, 60, 209);
+            font-size: 120%;
+        }
+        
+        ul {
+            float: right;
+            margin: 0;
+            /*左内边距设为零*/
+            padding-left: 0;
+        }
+        
+        li {
+            float: left;
+            /*设置列表项的前缀为none*/
+            list-style: none;
+            margin-right: 30px;
+        }
+        
+        li a {
+            line-height: 64px;
+            /*去除超链接下划线*/
+            text-decoration: none;
+            color: black;
+        }
+        
+        li a:hover {
+            color: brown;
+        }
+        
+        div.inf {
+            width: 350px;
+            height: 80px;
+            border: 5px solid gold;
+            padding: 25px;
+            margin: 25px;
+            background-color: lightcoral;
+        }
+    </style>
+    <div>
+        <img id="logo" src="img/title.png" alt="两座山峰">
+        <!--ul无序列表 li 列表元素-->
+        <ul>
+            <!--实现点击首页标签跳转到指定界面-->
+            <!--a标签  超链接标签-->
+            <li><a onclick="refresh()">登录首页</a></li>
+            <li><a href="#table_customer">账户信息</a></li>
+            <li><a href="#table_data">运动数据</a></li>
+            <li><a href="#table_order">订单信息</a></li>
+        </ul>
+    </div>
+    <div id="contend" style="top: 70px;left: 0px;position: absolute;width: 100%;">
+        <img src="img/gym.jpeg" width="100%">
+        <div id="infield" style="left: 480px;top: 150px;position: absolute;" class="inf">
+            <label id="1" class="la"><strong>姓名：</strong></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="na"><br /><br /><label id="2" class="la"> <strong>face_ID：</strong></label><input type="text" id="face_ID"> &nbsp;&nbsp;
+            <input type="button" id="3" value="查询" onclick="doOpen()" />
+        </div>
+    </div>
+    <br />
+    <table class="customtable" border="2" id="table_customer" style="left: 25%; position:relative;">
+        <caption align="center">客户信息</caption>
+        <tr>
+            <th>姓名</th>
+            <th>ID</th>
+            <th>电话</th>
+            <th>剩余次数</th>
+            <th>截止日期</th>
+            <th>是否可用</th>
+        </tr>
+    </table>
+    <br />
+    <div id="data">
+        <h2><label style="font-size: 20px;"><strong>运动数据</strong></label></h2>
+        <div style="overflow-y: scroll; height: 350px;width: 390px; overflow-x: none;">
+            <table class="sportable" border="1" id="table_data">
+                <tr>
+                    <th>时间</th>
+                    <th>地点</th>
+                    <th>心率(次/分钟)</th>
+                    <th>体温(℃)</th>
+                </tr>
+            </table>
+        </div>
+        <canvas id="myCanvas2" width="900" height="450" style="top: 250px;left: 550px;position: absolute;background-color: black;border:1px solid black"></canvas>
+        <h2><label style="top: 250px;left: 400px;font-size: 20px;position: absolute;"><strong>运动统计：</strong></label></h2>
+        <button id="start" style="text-align:center;top: 210px;left: 550px;position: absolute;" onclick="reset()">Start</button>
+        <button id="switch" style="text-align:center;top: 210px;left: 610px;position: absolute; " onclick="stop()">心率</button>
+    </div>
+    <br />
+    <div id="order">
+        <h2><label style="font-size: 20px;"><strong>订单信息</strong></label></h2>
+        <div style="overflow-y: scroll; height: 350px;width: 370px; overflow-x: none;">
+            <table border="1" id="table_order">
+                <tr>
+                    <th>时间</th>
+                    <th>操作</th>
+                    <th>金额(元)</th>
+                    <th>套餐类型</th>
+                </tr>
+            </table>
+        </div>
+        <h2><label id="moneysum" style="top: 625px;left: 415px;font-size: 20px;position: absolute;"><strong>消费总额：</strong></label></h2>
+        <h2><label id="identysum" style="top: 625px;left: 650px;font-size: 20px;position: absolute;"><strong>到访次数：</strong></label></h2>
+        <h2><label style="top: 700px;left: 400px;font-size: 20px;position: absolute;"><strong>到访统计：</strong></label></h2>
+        <canvas id="myCanvas" width="750" height="350" style="top: 700px;left: 550px;position: absolute;background-color: black;"></canvas>
+    </div>
+    <script>
+        //websocket通信
+        var table_sports = document.getElementById("table_data");
+        var table_customers = document.getElementById("table_customer");
+        var client = null;
+        document.getElementById("data").style.display = "none";
+        table_customers.style.display = "none";
+        document.getElementById("order").style.display = "none";
+
+        var money = 0,
+            identify_num = 0;
+        var orderlist = [0, 0, 0, 0, 0, 0];
+        let tempturelist = [];
+        let heartbeatslist = [];
+
+        function refresh() {
+            location.reload();
+        }
+
+        function doOpen() {
+            console.log("open")
+            if (!("WebSocket" in window)) {
+                //不支持WebSocket
+                return;
+            }
+            client = null;
+            //client = new WebSocket("ws://localhost:9997");
+            client = new WebSocket("ws://192.168.174.162:9997");
+            client.onopen = function() {
+                    var text_name = document.getElementById("na");
+                    var text_faceID = document.getElementById("face_ID");
+                    if (text_name === null || text_faceID === null)
+                        return;
+                    client.send(text_faceID.value + "/" + text_name.value);
+                    document.getElementById("data").style.display = "";
+                    table_customers.style.display = "";
+                    document.getElementById("order").style.display = "";
+                    document.getElementById("contend").style.display = "none";
+                }
+                //收到数据后追加到尾巴上
+            client.onmessage = function(event) {
+                var temp = String(event.data).split("\\");
+                if (temp[0] == 1) {
+                    //创建tr
+                    var tr = document.createElement("tr");
+                    for (var j = 1; j < 5; j++) {
+                        var td = document.createElement("td");
+                        td.innerHTML = String(temp[j]);
+                        tr.appendChild(td);
+                    }
+                    table_sports.append(tr);
+                    heartbeatslist.push(parseInt(temp[3]));
+                    tempturelist.push(parseFloat(temp[4]));
+                } else if (temp[0] == 2) {
+                    //创建tr
+                    var tr = document.createElement("tr");
+                    for (var j = 1; j < 7; j++) {
+                        var td = document.createElement("td");
+                        td.innerHTML = String(temp[j]);
+                        tr.appendChild(td);
+                    }
+                    table_customers.append(tr);
+                } else if (temp[0] == 3) {
+                    //创建tr
+                    var tr = document.createElement("tr");
+                    for (var j = 1; j < 5; j++) {
+                        var td = document.createElement("td");
+                        td.innerHTML = String(temp[j]);
+                        tr.appendChild(td);
+                    }
+                    money += parseInt(temp[3]);
+                    identify_num += 1;
+                    document.getElementById("table_order").append(tr);
+                    document.getElementById("moneysum").textContent = "消费总额：" + money + "(元)";
+                    document.getElementById("identysum").textContent = "到访次数：" + identify_num + "(次)";
+
+                    //绘图统计
+                    var tempx = temp[1].split("/");
+                    orderlist[parseInt(tempx[1]) - 1] += 1;
+
+                } else {
+                    var data = orderlist;
+                    var xinforma = ['1月', '2月', '3月', '4月', '5月', '6月'];
+
+                    // 获取上下文
+                    var a_canvas = document.getElementById("myCanvas");
+                    var context = a_canvas.getContext("2d");
+
+
+                    // 绘制背景
+                    var gradient = context.createLinearGradient(0, 0, 0, 300);
+
+
+                    // gradient.addColorStop(0,"#e0e0e0");
+                    //gradient.addColorStop(1,"#ffffff");
+
+
+                    context.fillStyle = gradient;
+
+                    context.fillRect(0, 0, a_canvas.width, a_canvas.height);
+
+                    var realheight = a_canvas.height - 15;
+                    var realwidth = a_canvas.width - 40;
+                    // 描绘边框
+                    var grid_cols = data.length + 1;
+                    var grid_rows = 4;
+                    var cell_height = realheight / grid_rows;
+                    var cell_width = realwidth / grid_cols;
+                    context.lineWidth = 1;
+                    context.strokeStyle = "#a0a0a0";
+
+                    // 结束边框描绘
+                    context.beginPath();
+                    // 准备画横线
+                    /*for(var row = 1; row <= grid_rows; row++){
+                      var y = row * cell_height;
+                      context.moveTo(0,y);
+                      context.lineTo(a_canvas.width, y);
+                    }*/
+
+                    //划横线
+                    context.moveTo(0, realheight);
+                    context.lineTo(realwidth, realheight);
+
+
+                    //画竖线
+                    context.moveTo(0, 20);
+                    context.lineTo(0, realheight);
+                    context.lineWidth = 1;
+                    context.strokeStyle = "white";
+                    context.stroke();
+
+
+                    var max_v = 0;
+
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i] > max_v) {
+                            max_v = data[i]
+                        };
+                    }
+                    max_v = max_v * 1.1;
+                    // 将数据换算为坐标
+                    var points = [];
+                    for (var i = 0; i < data.length; i++) {
+                        var v = data[i];
+                        var px = cell_width * 　(i + 1);
+                        var py = realheight - realheight * (v / max_v);
+                        //alert(py);
+                        points.push({
+                            "x": px,
+                            "y": py
+                        });
+                    }
+
+                    //绘制坐标图形
+                    for (var i in points) {
+                        var p = points[i];
+                        context.beginPath();
+                        context.fillStyle = "green";
+                        context.fillRect(p.x, p.y, 15, realheight - p.y);
+
+                        context.fill();
+                    }
+                    //添加文字
+                    for (var i in points) {
+                        var p = points[i];
+                        context.beginPath();
+                        context.fillStyle = "white";
+                        context.fillText(data[i], p.x + 1, p.y - 15);
+                        context.fillText(xinforma[i], p.x + 1, realheight + 12);
+                        context.fillText('月份', realwidth, realheight + 12);
+                        context.fillText('到访次数', 0, 10);
+                    }
+                }
+            }
+
+            client.onclose = function() {
+                    client = null;
+                }
+                // don't try to learn anything from the code, it's a
+                // series of hacks. this one's all about the visuals.
+                // - @hakimel
+        }
+        //绘图    
+        var LineChart = function(options) {
+
+            var data = options.data;
+            //var canvas = document.body.appendChild(document.createElement('canvas'));
+            var canvas = document.getElementById("myCanvas2");
+            var context = canvas.getContext('2d');
+
+            var rendering = false,
+                paddingX = 40,
+                paddingY = 40,
+                width = 750,
+                height = 350,
+                progress = 0;
+
+            canvas.width = width;
+            canvas.height = height;
+
+            var maxValue,
+                minValue;
+
+            var y1 = paddingY + (0.05 * (height - (paddingY * 2))),
+                y2 = paddingY + (0.50 * (height - (paddingY * 2))),
+                y3 = paddingY + (0.95 * (height - (paddingY * 2)));
+
+            format();
+            render();
+
+            function format(force) {
+
+                maxValue = 0;
+                minValue = Number.MAX_VALUE;
+
+                data.forEach(function(point, i) {
+                    maxValue = Math.max(maxValue, point.value);
+                    minValue = Math.min(minValue, point.value);
+                });
+
+                data.forEach(function(point, i) {
+                    point.targetX = paddingX + (i / (data.length - 1)) * (width - (paddingX * 2));
+                    point.targetY = paddingY + ((point.value - minValue) / (maxValue - minValue) * (height - (paddingY * 2)));
+                    point.targetY = height - point.targetY;
+
+                    if (force || (!point.x && !point.y)) {
+                        point.x = point.targetX + 30;
+                        point.y = point.targetY;
+                        point.speed = 0.04 + (1 - (i / data.length)) * 0.05;
+                    }
+                });
+
+            }
+
+            function render() {
+
+                if (!rendering) {
+                    requestAnimationFrame(render);
+                    return;
+                }
+
+                context.font = '10px sans-serif';
+                context.clearRect(0, 0, width, height);
+
+                context.fillStyle = '#666';
+                context.fillRect(paddingX, y1, width - (paddingX * 2), 1);
+                context.fillRect(paddingX, y2, width - (paddingX * 2), 1);
+                context.fillRect(paddingX, y3, width - (paddingX * 2), 1);
+
+                if (options.yAxisLabel) {
+                    context.save();
+                    context.globalAlpha = progress;
+                    context.translate(paddingX - 15, height - paddingY - 10);
+                    context.rotate(-Math.PI / 2);
+                    context.fillStyle = '#666';
+                    context.fillText(options.yAxisLabel, 0, 0);
+                    context.restore();
+                }
+
+                var progressDots = Math.floor(progress * data.length);
+                var progressFragment = (progress * data.length) - Math.floor(progress * data.length);
+
+                data.forEach(function(point, i) {
+                    if (i <= progressDots) {
+                        point.x += (point.targetX - point.x) * point.speed;
+                        point.y += (point.targetY - point.y) * point.speed;
+
+                        context.save();
+
+                        var wordWidth = context.measureText(point.label).width;
+                        context.globalAlpha = i === progressDots ? progressFragment : 1;
+                        context.fillStyle = point.future ? '#aaa' : '#fff';
+                        context.fillText(point.label, point.x - (wordWidth / 2), height - 18);
+
+                        if (i < progressDots && !point.future) {
+                            context.beginPath();
+                            context.arc(point.x, point.y, 4, 0, Math.PI * 2);
+                            context.fillStyle = '#1baee1';
+                            context.fill();
+                        }
+
+                        context.restore();
+                    }
+
+                });
+
+                context.save();
+                context.beginPath();
+                context.strokeStyle = '#1baee1';
+                context.lineWidth = 2;
+
+                var futureStarted = false;
+
+                data.forEach(function(point, i) {
+
+                    if (i <= progressDots) {
+
+                        var px = i === 0 ? data[0].x : data[i - 1].x,
+                            py = i === 0 ? data[0].y : data[i - 1].y;
+
+                        var x = point.x,
+                            y = point.y;
+
+                        if (i === progressDots) {
+                            x = px + ((x - px) * progressFragment);
+                            y = py + ((y - py) * progressFragment);
+                        }
+
+                        if (point.future && !futureStarted) {
+                            futureStarted = true;
+
+                            context.stroke();
+                            context.beginPath();
+                            context.moveTo(px, py);
+                            context.strokeStyle = '#fff';
+
+                            if (typeof context.setLineDash === 'function') {
+                                context.setLineDash([2, 3]);
+                            }
+                        }
+
+                        if (i === 0) {
+                            context.moveTo(x, y);
+                        } else {
+                            context.lineTo(x, y);
+                        }
+
+                    }
+
+                });
+
+                context.stroke();
+                context.restore();
+
+                progress += (1 - progress) * 0.02;
+
+                requestAnimationFrame(render);
+
+            }
+
+            this.start = function() {
+                rendering = true;
+            }
+
+            this.stop = function() {
+                rendering = false;
+                progress = 0;
+                format(true);
+            }
+
+            this.restart = function() {
+                this.stop();
+                this.start();
+            }
+
+            this.append = function(points) {
+                progress -= points.length / data.length;
+                data = data.concat(points);
+
+                format();
+            }
+
+            this.populate = function(points) {
+                progress = 0;
+                data = points;
+
+                format();
+            }
+
+        };
+
+        var chart = new LineChart({
+            data: []
+        });
+
+
+        //reset();
+
+        chart.start();
+
+        function append() {
+            chart.append([{
+                label: 'Rnd',
+                value: 1300 + (Math.random() * 1500),
+                future: true
+            }]);
+        }
+
+        function restart() {
+            chart.restart();
+        }
+
+        function reset() {
+            var po = [];
+            for (var i = 0; i < heartbeatslist.length; i++) {
+                if (document.getElementById("switch").textContent == "心率") {
+                    po.push({
+                        label: i,
+                        value: heartbeatslist[i]
+                    })
+                } else {
+                    po.push({
+                        label: i,
+                        value: tempturelist[i]
+                    })
+                }
+            }
+            chart.populate(po);
+        }
+
+        function stop() {
+            if (document.getElementById("switch").textContent == "心率") {
+                document.getElementById("switch").textContent = "体温";
+            } else {
+                document.getElementById("switch").textContent = "心率";
+            }
+        }
+        reset();
+    </script>
+</body>
+
+</html>

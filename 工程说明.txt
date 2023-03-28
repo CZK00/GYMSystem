@@ -1,0 +1,31 @@
+*****************************************************************************
+**	工程目录文件说明：				         	**							
+**	Arduino Project  	——————  ESP32设备工程文件 	**
+**	QTNetwork	——————  Qt工程文件	         	**	
+**	webServer	——————  html工程文件           	**
+*****************************************************************************
+
+各个工程文件下文件说明：
+
+①Arduino Project  
+
+	文件名称：			说明：
+	bluetoothDev			辅助定位设备
+	cameraTcp			前台认证设备
+	wearableDev			可穿戴设备
+
+②QTNetwork：其下build文件夹为工程的根目录
+
+	文件名称：			说明：
+	faceDB文件夹			采集到客户的人像存入此文件夹
+	at.txt				用于人脸识别模型的训练，记录采集到人像的信息
+	database.db			本工程引入的数据库
+	haarcascade_frontalface_alt2.xml	人脸检测的分类器
+	MyFaceFisherModel.xml		训练的人脸识别模型
+	*.png				工程所用到的图片
+
+③webServer
+
+	文件名称：			说明：
+	websocket.html			用于访问服务器的动态网页
+	img				网页用到的图片

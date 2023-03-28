@@ -1,0 +1,887 @@
+/********************************************************************************
+** Form generated from reading UI file 'widget.ui'
+**
+** Created by: Qt User Interface Compiler version 5.11.1
+**
+** WARNING! All changes made in this file will be lost when recompiling UI file!
+********************************************************************************/
+
+#ifndef UI_WIDGET_H
+#define UI_WIDGET_H
+
+#include <QtCore/QVariant>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QDateTimeEdit>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
+#include <chartview.h>
+#include "qchartview.h"
+
+QT_BEGIN_NAMESPACE
+
+class Ui_Widget
+{
+public:
+    QListWidget *msgBox;
+    QListWidget *IPManager;
+    QLabel *label;
+    QLabel *label_2;
+    QPushButton *Check;
+    QPushButton *BreakOFF;
+    QListWidget *TcpState;
+    QLabel *label_3;
+    QLabel *label_4;
+    QListWidget *NetSpeed;
+    QListWidget *ThreadNum;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *Count;
+    QTableWidget *tableWidget;
+    QLabel *label_7;
+    QLabel *label_welcome;
+    QPushButton *pushButton;
+    QDateTimeEdit *start_dateTime;
+    QDateTimeEdit *end_dateTime;
+    QLineEdit *nameSearch;
+    QPushButton *searchButton;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLabel *label_10;
+    QPushButton *addNewCustom;
+    QLineEdit *nameEdit;
+    QLineEdit *telEdit;
+    QComboBox *comboType;
+    QLineEdit *timesEdit;
+    QLabel *label_11;
+    QLabel *label_12;
+    QLabel *label_13;
+    QLabel *label_14;
+    QPushButton *nextButton;
+    QLabel *ImageShow;
+    QListWidget *listWidget;
+    QListWidget *searchWidget;
+    QLabel *label_15;
+    QLineEdit *faceidSearch;
+    QLabel *customlabel;
+    QLabel *customlabel_2;
+    QLabel *customlabel_3;
+    QLabel *customlabel_4;
+    QLabel *customlabel_5;
+    QLabel *customlabel_6;
+    QComboBox *showType;
+    QComboBox *loginType;
+    QPushButton *refreshCustom;
+    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout;
+    QPushButton *fixCustom;
+    QPushButton *addmoneyCustom;
+    QPushButton *deleteCustom;
+    QPushButton *freezeCustom;
+    ChartView *drawwidget;
+    QListWidget *deviceMenu;
+    QLabel *label_16;
+    QLabel *label_17;
+    QLabel *label_18;
+    QLabel *label_19;
+    QLabel *label_20;
+    QLabel *label_21;
+    QLabel *label_22;
+    QLabel *label_23;
+    QChartView *placewidget;
+    QTextEdit *customerdatalist;
+    QLabel *label_24;
+    QPushButton *routeButton;
+    QTextEdit *routeEdit;
+    QTextEdit *serviceEdit;
+    QLabel *label_25;
+    QListWidget *dirbar;
+    QChartView *loginChart;
+    QTextEdit *loginEdit;
+    QListWidget *sysManager;
+    QTextEdit *ordershow;
+    QDateTimeEdit *orderDate1;
+    QDateTimeEdit *orderDate2;
+    QLabel *label_26;
+    QLabel *label_27;
+    QChartView *accountChart;
+    QChartView *comboChart;
+    QTextEdit *ordershow2;
+    QTextEdit *ordershow3;
+    QWidget *layoutWidget1;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *orderList;
+    QPushButton *orderSearch;
+    QPushButton *orderAnalysis;
+    QLabel *label_28;
+    QLabel *label_29;
+    QLineEdit *nameSearch2;
+    QLineEdit *faceidSearch2;
+    QPushButton *searchButton2;
+    QComboBox *comboType2;
+    QLabel *label_30;
+    QPushButton *refreshOrderButton;
+    QPushButton *newAccount;
+    QPushButton *refreshAccount;
+    QPushButton *deletAccount;
+    QPushButton *orderbutton;
+    QLabel *orderlabel1;
+    QLabel *orderlabel2;
+    QLabel *orderlabel3;
+    QLabel *orderlabel4;
+    QLineEdit *orderEdit1;
+    QLineEdit *orderEdit2;
+    QLineEdit *orderEdit3;
+    QTextEdit *orderEdit4;
+    QLineEdit *deviceEdit;
+    QLineEdit *nameEdit2;
+    QLabel *devicelabel;
+    QLabel *namelabel;
+    QPushButton *deviceSearch;
+    QPushButton *newOrderButton;
+    QPushButton *deleteOrderButton;
+
+    void setupUi(QWidget *Widget)
+    {
+        if (Widget->objectName().isEmpty())
+            Widget->setObjectName(QStringLiteral("Widget"));
+        Widget->resize(1393, 744);
+        msgBox = new QListWidget(Widget);
+        msgBox->setObjectName(QStringLiteral("msgBox"));
+        msgBox->setGeometry(QRect(220, 380, 481, 151));
+        IPManager = new QListWidget(Widget);
+        IPManager->setObjectName(QStringLiteral("IPManager"));
+        IPManager->setGeometry(QRect(220, 150, 171, 192));
+        label = new QLabel(Widget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(310, 365, 54, 12));
+        label_2 = new QLabel(Widget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(220, 130, 91, 21));
+        Check = new QPushButton(Widget);
+        Check->setObjectName(QStringLiteral("Check"));
+        Check->setGeometry(QRect(710, 150, 75, 23));
+        BreakOFF = new QPushButton(Widget);
+        BreakOFF->setObjectName(QStringLiteral("BreakOFF"));
+        BreakOFF->setGeometry(QRect(710, 190, 75, 23));
+        TcpState = new QListWidget(Widget);
+        TcpState->setObjectName(QStringLiteral("TcpState"));
+        TcpState->setGeometry(QRect(490, 150, 101, 192));
+        label_3 = new QLabel(Widget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(490, 135, 54, 12));
+        label_4 = new QLabel(Widget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(590, 131, 51, 20));
+        NetSpeed = new QListWidget(Widget);
+        NetSpeed->setObjectName(QStringLiteral("NetSpeed"));
+        NetSpeed->setGeometry(QRect(590, 150, 111, 192));
+        ThreadNum = new QListWidget(Widget);
+        ThreadNum->setObjectName(QStringLiteral("ThreadNum"));
+        ThreadNum->setGeometry(QRect(390, 150, 101, 192));
+        label_5 = new QLabel(Widget);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(390, 130, 41, 20));
+        label_6 = new QLabel(Widget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(620, 360, 71, 21));
+        Count = new QLabel(Widget);
+        Count->setObjectName(QStringLiteral("Count"));
+        Count->setGeometry(QRect(680, 360, 51, 21));
+        tableWidget = new QTableWidget(Widget);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(190, 90, 911, 571));
+        tableWidget->setFocusPolicy(Qt::NoFocus);
+        label_7 = new QLabel(Widget);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(0, 9, 131, 21));
+        QFont font;
+        font.setPointSize(16);
+        label_7->setFont(font);
+        label_welcome = new QLabel(Widget);
+        label_welcome->setObjectName(QStringLiteral("label_welcome"));
+        label_welcome->setGeometry(QRect(896, 8, 121, 31));
+        pushButton = new QPushButton(Widget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(1040, 10, 41, 21));
+        QFont font1;
+        font1.setPointSize(10);
+        font1.setBold(true);
+        font1.setUnderline(true);
+        font1.setWeight(75);
+        pushButton->setFont(font1);
+        pushButton->setFlat(true);
+        start_dateTime = new QDateTimeEdit(Widget);
+        start_dateTime->setObjectName(QStringLiteral("start_dateTime"));
+        start_dateTime->setGeometry(QRect(270, 130, 194, 22));
+        end_dateTime = new QDateTimeEdit(Widget);
+        end_dateTime->setObjectName(QStringLiteral("end_dateTime"));
+        end_dateTime->setGeometry(QRect(570, 130, 194, 22));
+        nameSearch = new QLineEdit(Widget);
+        nameSearch->setObjectName(QStringLiteral("nameSearch"));
+        nameSearch->setGeometry(QRect(80, 130, 191, 20));
+        searchButton = new QPushButton(Widget);
+        searchButton->setObjectName(QStringLiteral("searchButton"));
+        searchButton->setGeometry(QRect(610, 130, 75, 23));
+        label_8 = new QLabel(Widget);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(10, 132, 61, 20));
+        label_9 = new QLabel(Widget);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(210, 130, 61, 20));
+        label_10 = new QLabel(Widget);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setGeometry(QRect(500, 130, 61, 20));
+        addNewCustom = new QPushButton(Widget);
+        addNewCustom->setObjectName(QStringLiteral("addNewCustom"));
+        addNewCustom->setGeometry(QRect(10, 130, 111, 31));
+        nameEdit = new QLineEdit(Widget);
+        nameEdit->setObjectName(QStringLiteral("nameEdit"));
+        nameEdit->setGeometry(QRect(100, 130, 201, 31));
+        telEdit = new QLineEdit(Widget);
+        telEdit->setObjectName(QStringLiteral("telEdit"));
+        telEdit->setGeometry(QRect(100, 180, 201, 31));
+        comboType = new QComboBox(Widget);
+        comboType->setObjectName(QStringLiteral("comboType"));
+        comboType->setGeometry(QRect(100, 240, 201, 31));
+        timesEdit = new QLineEdit(Widget);
+        timesEdit->setObjectName(QStringLiteral("timesEdit"));
+        timesEdit->setGeometry(QRect(420, 240, 201, 31));
+        label_11 = new QLabel(Widget);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setGeometry(QRect(30, 130, 51, 31));
+        label_12 = new QLabel(Widget);
+        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setGeometry(QRect(30, 180, 51, 31));
+        label_13 = new QLabel(Widget);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setGeometry(QRect(30, 240, 51, 31));
+        label_14 = new QLabel(Widget);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setGeometry(QRect(350, 240, 51, 31));
+        nextButton = new QPushButton(Widget);
+        nextButton->setObjectName(QStringLiteral("nextButton"));
+        nextButton->setGeometry(QRect(610, 660, 75, 23));
+        ImageShow = new QLabel(Widget);
+        ImageShow->setObjectName(QStringLiteral("ImageShow"));
+        ImageShow->setGeometry(QRect(190, 90, 241, 181));
+        listWidget = new QListWidget(Widget);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(0, 0, 1401, 91));
+        listWidget->setFocusPolicy(Qt::NoFocus);
+        searchWidget = new QListWidget(Widget);
+        QFont font2;
+        font2.setPointSize(15);
+        QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(searchWidget);
+        __qlistwidgetitem->setFont(font2);
+        QListWidgetItem *__qlistwidgetitem1 = new QListWidgetItem(searchWidget);
+        __qlistwidgetitem1->setFont(font2);
+        QListWidgetItem *__qlistwidgetitem2 = new QListWidgetItem(searchWidget);
+        __qlistwidgetitem2->setFont(font2);
+        searchWidget->setObjectName(QStringLiteral("searchWidget"));
+        searchWidget->setGeometry(QRect(0, 120, 191, 771));
+        searchWidget->setFocusPolicy(Qt::NoFocus);
+        searchWidget->setFrameShape(QFrame::NoFrame);
+        searchWidget->setSpacing(20);
+        label_15 = new QLabel(Widget);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(340, 132, 54, 12));
+        faceidSearch = new QLineEdit(Widget);
+        faceidSearch->setObjectName(QStringLiteral("faceidSearch"));
+        faceidSearch->setGeometry(QRect(400, 130, 191, 20));
+        customlabel = new QLabel(Widget);
+        customlabel->setObjectName(QStringLiteral("customlabel"));
+        customlabel->setGeometry(QRect(210, 130, 361, 51));
+        QFont font3;
+        font3.setPointSize(11);
+        customlabel->setFont(font3);
+        customlabel_2 = new QLabel(Widget);
+        customlabel_2->setObjectName(QStringLiteral("customlabel_2"));
+        customlabel_2->setGeometry(QRect(210, 180, 361, 51));
+        customlabel_2->setFont(font3);
+        customlabel_3 = new QLabel(Widget);
+        customlabel_3->setObjectName(QStringLiteral("customlabel_3"));
+        customlabel_3->setGeometry(QRect(210, 240, 361, 51));
+        customlabel_3->setFont(font3);
+        customlabel_4 = new QLabel(Widget);
+        customlabel_4->setObjectName(QStringLiteral("customlabel_4"));
+        customlabel_4->setGeometry(QRect(210, 290, 361, 51));
+        customlabel_4->setFont(font3);
+        customlabel_5 = new QLabel(Widget);
+        customlabel_5->setObjectName(QStringLiteral("customlabel_5"));
+        customlabel_5->setGeometry(QRect(210, 350, 361, 51));
+        customlabel_5->setFont(font3);
+        customlabel_6 = new QLabel(Widget);
+        customlabel_6->setObjectName(QStringLiteral("customlabel_6"));
+        customlabel_6->setGeometry(QRect(420, 130, 101, 111));
+        customlabel_6->setFont(font3);
+        showType = new QComboBox(Widget);
+        showType->addItem(QString());
+        showType->addItem(QString());
+        showType->addItem(QString());
+        showType->setObjectName(QStringLiteral("showType"));
+        showType->setGeometry(QRect(950, 130, 101, 22));
+        loginType = new QComboBox(Widget);
+        loginType->addItem(QString());
+        loginType->addItem(QString());
+        loginType->setObjectName(QStringLiteral("loginType"));
+        loginType->setGeometry(QRect(810, 130, 101, 22));
+        refreshCustom = new QPushButton(Widget);
+        refreshCustom->setObjectName(QStringLiteral("refreshCustom"));
+        refreshCustom->setGeometry(QRect(10, 180, 111, 31));
+        layoutWidget = new QWidget(Widget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(880, 160, 91, 171));
+        verticalLayout = new QVBoxLayout(layoutWidget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        fixCustom = new QPushButton(layoutWidget);
+        fixCustom->setObjectName(QStringLiteral("fixCustom"));
+
+        verticalLayout->addWidget(fixCustom);
+
+        addmoneyCustom = new QPushButton(layoutWidget);
+        addmoneyCustom->setObjectName(QStringLiteral("addmoneyCustom"));
+
+        verticalLayout->addWidget(addmoneyCustom);
+
+        deleteCustom = new QPushButton(layoutWidget);
+        deleteCustom->setObjectName(QStringLiteral("deleteCustom"));
+
+        verticalLayout->addWidget(deleteCustom);
+
+        freezeCustom = new QPushButton(layoutWidget);
+        freezeCustom->setObjectName(QStringLiteral("freezeCustom"));
+
+        verticalLayout->addWidget(freezeCustom);
+
+        drawwidget = new ChartView(Widget);
+        drawwidget->setObjectName(QStringLiteral("drawwidget"));
+        drawwidget->setGeometry(QRect(200, 170, 711, 341));
+        deviceMenu = new QListWidget(Widget);
+        QListWidgetItem *__qlistwidgetitem3 = new QListWidgetItem(deviceMenu);
+        __qlistwidgetitem3->setFont(font2);
+        QListWidgetItem *__qlistwidgetitem4 = new QListWidgetItem(deviceMenu);
+        __qlistwidgetitem4->setFont(font2);
+        QListWidgetItem *__qlistwidgetitem5 = new QListWidgetItem(deviceMenu);
+        __qlistwidgetitem5->setFont(font2);
+        deviceMenu->setObjectName(QStringLiteral("deviceMenu"));
+        deviceMenu->setGeometry(QRect(0, 120, 191, 641));
+        deviceMenu->setFrameShape(QFrame::NoFrame);
+        deviceMenu->setSpacing(20);
+        label_16 = new QLabel(Widget);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(930, 170, 91, 31));
+        label_17 = new QLabel(Widget);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setGeometry(QRect(950, 200, 91, 31));
+        label_18 = new QLabel(Widget);
+        label_18->setObjectName(QStringLiteral("label_18"));
+        label_18->setGeometry(QRect(950, 260, 91, 31));
+        label_19 = new QLabel(Widget);
+        label_19->setObjectName(QStringLiteral("label_19"));
+        label_19->setGeometry(QRect(950, 230, 91, 31));
+        label_20 = new QLabel(Widget);
+        label_20->setObjectName(QStringLiteral("label_20"));
+        label_20->setGeometry(QRect(940, 300, 91, 31));
+        label_21 = new QLabel(Widget);
+        label_21->setObjectName(QStringLiteral("label_21"));
+        label_21->setGeometry(QRect(950, 340, 91, 31));
+        label_22 = new QLabel(Widget);
+        label_22->setObjectName(QStringLiteral("label_22"));
+        label_22->setGeometry(QRect(950, 400, 91, 31));
+        label_23 = new QLabel(Widget);
+        label_23->setObjectName(QStringLiteral("label_23"));
+        label_23->setGeometry(QRect(950, 370, 91, 31));
+        placewidget = new QChartView(Widget);
+        placewidget->setObjectName(QStringLiteral("placewidget"));
+        placewidget->setGeometry(QRect(200, 160, 861, 421));
+        customerdatalist = new QTextEdit(Widget);
+        customerdatalist->setObjectName(QStringLiteral("customerdatalist"));
+        customerdatalist->setGeometry(QRect(1060, 160, 301, 591));
+        customerdatalist->setFrameShape(QFrame::NoFrame);
+        label_24 = new QLabel(Widget);
+        label_24->setObjectName(QStringLiteral("label_24"));
+        label_24->setGeometry(QRect(1060, 130, 81, 31));
+        QFont font4;
+        font4.setFamily(QStringLiteral("Adobe Arabic"));
+        font4.setPointSize(12);
+        label_24->setFont(font4);
+        routeButton = new QPushButton(Widget);
+        routeButton->setObjectName(QStringLiteral("routeButton"));
+        routeButton->setGeometry(QRect(810, 130, 75, 23));
+        routeEdit = new QTextEdit(Widget);
+        routeEdit->setObjectName(QStringLiteral("routeEdit"));
+        routeEdit->setGeometry(QRect(200, 580, 861, 141));
+        routeEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        serviceEdit = new QTextEdit(Widget);
+        serviceEdit->setObjectName(QStringLiteral("serviceEdit"));
+        serviceEdit->setGeometry(QRect(100, 300, 581, 321));
+        QFont font5;
+        font5.setPointSize(10);
+        serviceEdit->setFont(font5);
+        serviceEdit->setFrameShape(QFrame::WinPanel);
+        serviceEdit->setFrameShadow(QFrame::Sunken);
+        serviceEdit->setReadOnly(true);
+        serviceEdit->setTextInteractionFlags(Qt::NoTextInteraction);
+        label_25 = new QLabel(Widget);
+        label_25->setObjectName(QStringLiteral("label_25"));
+        label_25->setGeometry(QRect(30, 310, 54, 12));
+        dirbar = new QListWidget(Widget);
+        dirbar->setObjectName(QStringLiteral("dirbar"));
+        dirbar->setGeometry(QRect(0, 90, 1401, 30));
+        dirbar->setFont(font5);
+        loginChart = new QChartView(Widget);
+        loginChart->setObjectName(QStringLiteral("loginChart"));
+        loginChart->setGeometry(QRect(810, 170, 451, 341));
+        loginEdit = new QTextEdit(Widget);
+        loginEdit->setObjectName(QStringLiteral("loginEdit"));
+        loginEdit->setGeometry(QRect(810, 520, 451, 191));
+        QFont font6;
+        font6.setFamily(QStringLiteral("Consolas"));
+        font6.setPointSize(10);
+        loginEdit->setFont(font6);
+        loginEdit->setFrameShape(QFrame::NoFrame);
+        loginEdit->setTextInteractionFlags(Qt::NoTextInteraction);
+        sysManager = new QListWidget(Widget);
+        QListWidgetItem *__qlistwidgetitem6 = new QListWidgetItem(sysManager);
+        __qlistwidgetitem6->setFont(font2);
+        QListWidgetItem *__qlistwidgetitem7 = new QListWidgetItem(sysManager);
+        __qlistwidgetitem7->setFont(font2);
+        sysManager->setObjectName(QStringLiteral("sysManager"));
+        sysManager->setGeometry(QRect(0, 120, 191, 631));
+        sysManager->setFrameShape(QFrame::NoFrame);
+        sysManager->setSpacing(30);
+        ordershow = new QTextEdit(Widget);
+        ordershow->setObjectName(QStringLiteral("ordershow"));
+        ordershow->setGeometry(QRect(930, 160, 411, 151));
+        QFont font7;
+        font7.setFamily(QStringLiteral("Consolas"));
+        font7.setPointSize(14);
+        font7.setBold(true);
+        font7.setWeight(75);
+        ordershow->setFont(font7);
+        ordershow->setAutoFillBackground(false);
+        ordershow->setFrameShape(QFrame::NoFrame);
+        ordershow->setTextInteractionFlags(Qt::NoTextInteraction);
+        orderDate1 = new QDateTimeEdit(Widget);
+        orderDate1->setObjectName(QStringLiteral("orderDate1"));
+        orderDate1->setGeometry(QRect(930, 130, 161, 21));
+        orderDate1->setFrame(true);
+        orderDate2 = new QDateTimeEdit(Widget);
+        orderDate2->setObjectName(QStringLiteral("orderDate2"));
+        orderDate2->setGeometry(QRect(1120, 130, 161, 21));
+        label_26 = new QLabel(Widget);
+        label_26->setObjectName(QStringLiteral("label_26"));
+        label_26->setGeometry(QRect(813, 131, 101, 21));
+        QFont font8;
+        font8.setPointSize(12);
+        font8.setBold(true);
+        font8.setWeight(75);
+        label_26->setFont(font8);
+        label_27 = new QLabel(Widget);
+        label_27->setObjectName(QStringLiteral("label_27"));
+        label_27->setGeometry(QRect(1100, 130, 21, 21));
+        accountChart = new QChartView(Widget);
+        accountChart->setObjectName(QStringLiteral("accountChart"));
+        accountChart->setGeometry(QRect(839, 529, 261, 191));
+        comboChart = new QChartView(Widget);
+        comboChart->setObjectName(QStringLiteral("comboChart"));
+        comboChart->setGeometry(QRect(690, 580, 120, 80));
+        ordershow2 = new QTextEdit(Widget);
+        ordershow2->setObjectName(QStringLiteral("ordershow2"));
+        ordershow2->setGeometry(QRect(1160, 170, 331, 191));
+        QFont font9;
+        font9.setFamily(QStringLiteral("Consolas"));
+        font9.setPointSize(14);
+        font9.setBold(false);
+        font9.setWeight(50);
+        ordershow2->setFont(font9);
+        ordershow2->setAutoFillBackground(false);
+        ordershow2->setFrameShape(QFrame::NoFrame);
+        ordershow2->setTextInteractionFlags(Qt::NoTextInteraction);
+        ordershow3 = new QTextEdit(Widget);
+        ordershow3->setObjectName(QStringLiteral("ordershow3"));
+        ordershow3->setGeometry(QRect(1260, 220, 331, 191));
+        ordershow3->setFont(font9);
+        ordershow3->setAutoFillBackground(false);
+        ordershow3->setFrameShape(QFrame::NoFrame);
+        ordershow3->setTextInteractionFlags(Qt::NoTextInteraction);
+        layoutWidget1 = new QWidget(Widget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(0, 100, 581, 71));
+        horizontalLayout = new QHBoxLayout(layoutWidget1);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        orderList = new QPushButton(layoutWidget1);
+        orderList->setObjectName(QStringLiteral("orderList"));
+        QFont font10;
+        font10.setPointSize(9);
+        orderList->setFont(font10);
+        orderList->setFocusPolicy(Qt::StrongFocus);
+
+        horizontalLayout->addWidget(orderList);
+
+        orderSearch = new QPushButton(layoutWidget1);
+        orderSearch->setObjectName(QStringLiteral("orderSearch"));
+
+        horizontalLayout->addWidget(orderSearch);
+
+        orderAnalysis = new QPushButton(layoutWidget1);
+        orderAnalysis->setObjectName(QStringLiteral("orderAnalysis"));
+
+        horizontalLayout->addWidget(orderAnalysis);
+
+        orderSearch->raise();
+        orderList->raise();
+        orderAnalysis->raise();
+        label_28 = new QLabel(Widget);
+        label_28->setObjectName(QStringLiteral("label_28"));
+        label_28->setGeometry(QRect(10, 160, 61, 21));
+        label_29 = new QLabel(Widget);
+        label_29->setObjectName(QStringLiteral("label_29"));
+        label_29->setGeometry(QRect(340, 160, 54, 12));
+        nameSearch2 = new QLineEdit(Widget);
+        nameSearch2->setObjectName(QStringLiteral("nameSearch2"));
+        nameSearch2->setGeometry(QRect(80, 160, 201, 20));
+        faceidSearch2 = new QLineEdit(Widget);
+        faceidSearch2->setObjectName(QStringLiteral("faceidSearch2"));
+        faceidSearch2->setGeometry(QRect(410, 160, 201, 20));
+        searchButton2 = new QPushButton(Widget);
+        searchButton2->setObjectName(QStringLiteral("searchButton2"));
+        searchButton2->setGeometry(QRect(530, 190, 75, 23));
+        comboType2 = new QComboBox(Widget);
+        comboType2->addItem(QString());
+        comboType2->addItem(QString());
+        comboType2->addItem(QString());
+        comboType2->setObjectName(QStringLiteral("comboType2"));
+        comboType2->setGeometry(QRect(80, 190, 201, 22));
+        label_30 = new QLabel(Widget);
+        label_30->setObjectName(QStringLiteral("label_30"));
+        label_30->setGeometry(QRect(10, 190, 61, 21));
+        refreshOrderButton = new QPushButton(Widget);
+        refreshOrderButton->setObjectName(QStringLiteral("refreshOrderButton"));
+        refreshOrderButton->setGeometry(QRect(350, 130, 111, 23));
+        newAccount = new QPushButton(Widget);
+        newAccount->setObjectName(QStringLiteral("newAccount"));
+        newAccount->setGeometry(QRect(480, 130, 101, 23));
+        refreshAccount = new QPushButton(Widget);
+        refreshAccount->setObjectName(QStringLiteral("refreshAccount"));
+        refreshAccount->setGeometry(QRect(200, 130, 141, 23));
+        deletAccount = new QPushButton(Widget);
+        deletAccount->setObjectName(QStringLiteral("deletAccount"));
+        deletAccount->setGeometry(QRect(350, 130, 111, 23));
+        orderbutton = new QPushButton(Widget);
+        orderbutton->setObjectName(QStringLiteral("orderbutton"));
+        orderbutton->setGeometry(QRect(710, 280, 75, 23));
+        orderlabel1 = new QLabel(Widget);
+        orderlabel1->setObjectName(QStringLiteral("orderlabel1"));
+        orderlabel1->setGeometry(QRect(710, 320, 54, 12));
+        orderlabel2 = new QLabel(Widget);
+        orderlabel2->setObjectName(QStringLiteral("orderlabel2"));
+        orderlabel2->setGeometry(QRect(710, 340, 54, 12));
+        orderlabel3 = new QLabel(Widget);
+        orderlabel3->setObjectName(QStringLiteral("orderlabel3"));
+        orderlabel3->setGeometry(QRect(720, 360, 54, 12));
+        orderlabel4 = new QLabel(Widget);
+        orderlabel4->setObjectName(QStringLiteral("orderlabel4"));
+        orderlabel4->setGeometry(QRect(730, 380, 54, 12));
+        orderEdit1 = new QLineEdit(Widget);
+        orderEdit1->setObjectName(QStringLiteral("orderEdit1"));
+        orderEdit1->setGeometry(QRect(690, 240, 113, 20));
+        orderEdit2 = new QLineEdit(Widget);
+        orderEdit2->setObjectName(QStringLiteral("orderEdit2"));
+        orderEdit2->setGeometry(QRect(690, 240, 113, 20));
+        orderEdit3 = new QLineEdit(Widget);
+        orderEdit3->setObjectName(QStringLiteral("orderEdit3"));
+        orderEdit3->setGeometry(QRect(690, 240, 113, 20));
+        orderEdit4 = new QTextEdit(Widget);
+        orderEdit4->setObjectName(QStringLiteral("orderEdit4"));
+        orderEdit4->setGeometry(QRect(700, 200, 104, 71));
+        deviceEdit = new QLineEdit(Widget);
+        deviceEdit->setObjectName(QStringLiteral("deviceEdit"));
+        deviceEdit->setGeometry(QRect(730, 410, 113, 20));
+        nameEdit2 = new QLineEdit(Widget);
+        nameEdit2->setObjectName(QStringLiteral("nameEdit2"));
+        nameEdit2->setGeometry(QRect(730, 440, 113, 20));
+        devicelabel = new QLabel(Widget);
+        devicelabel->setObjectName(QStringLiteral("devicelabel"));
+        devicelabel->setGeometry(QRect(770, 510, 54, 12));
+        namelabel = new QLabel(Widget);
+        namelabel->setObjectName(QStringLiteral("namelabel"));
+        namelabel->setGeometry(QRect(760, 530, 54, 12));
+        deviceSearch = new QPushButton(Widget);
+        deviceSearch->setObjectName(QStringLiteral("deviceSearch"));
+        deviceSearch->setGeometry(QRect(750, 470, 75, 23));
+        newOrderButton = new QPushButton(Widget);
+        newOrderButton->setObjectName(QStringLiteral("newOrderButton"));
+        newOrderButton->setGeometry(QRect(480, 130, 121, 23));
+        deleteOrderButton = new QPushButton(Widget);
+        deleteOrderButton->setObjectName(QStringLiteral("deleteOrderButton"));
+        deleteOrderButton->setGeometry(QRect(200, 130, 111, 23));
+        deviceMenu->raise();
+        newAccount->raise();
+        deletAccount->raise();
+        refreshAccount->raise();
+        newOrderButton->raise();
+        deleteOrderButton->raise();
+        searchWidget->raise();
+        sysManager->raise();
+        layoutWidget->raise();
+        TcpState->raise();
+        IPManager->raise();
+        ThreadNum->raise();
+        drawwidget->raise();
+        NetSpeed->raise();
+        placewidget->raise();
+        tableWidget->raise();
+        ImageShow->raise();
+        customlabel->raise();
+        dirbar->raise();
+        label_14->raise();
+        timesEdit->raise();
+        telEdit->raise();
+        comboType->raise();
+        nameEdit->raise();
+        label_13->raise();
+        refreshCustom->raise();
+        label_25->raise();
+        serviceEdit->raise();
+        label_11->raise();
+        label_2->raise();
+        nameSearch->raise();
+        faceidSearch->raise();
+        label_9->raise();
+        start_dateTime->raise();
+        routeEdit->raise();
+        addNewCustom->raise();
+        customlabel_5->raise();
+        customlabel_2->raise();
+        customlabel_4->raise();
+        customlabel_3->raise();
+        label_5->raise();
+        label_10->raise();
+        loginType->raise();
+        label_12->raise();
+        end_dateTime->raise();
+        searchButton->raise();
+        layoutWidget->raise();
+        msgBox->raise();
+        label->raise();
+        Check->raise();
+        BreakOFF->raise();
+        label_3->raise();
+        label_4->raise();
+        label_6->raise();
+        Count->raise();
+        label_7->raise();
+        nextButton->raise();
+        listWidget->raise();
+        label_welcome->raise();
+        pushButton->raise();
+        showType->raise();
+        label_16->raise();
+        label_17->raise();
+        label_18->raise();
+        label_19->raise();
+        label_20->raise();
+        label_21->raise();
+        label_22->raise();
+        label_23->raise();
+        customerdatalist->raise();
+        label_24->raise();
+        routeButton->raise();
+        loginChart->raise();
+        loginEdit->raise();
+        ordershow->raise();
+        orderDate1->raise();
+        orderDate2->raise();
+        label_26->raise();
+        label_27->raise();
+        accountChart->raise();
+        comboChart->raise();
+        ordershow2->raise();
+        ordershow3->raise();
+        customlabel_6->raise();
+        label_15->raise();
+        label_8->raise();
+        label_28->raise();
+        label_29->raise();
+        nameSearch2->raise();
+        faceidSearch2->raise();
+        searchButton2->raise();
+        comboType2->raise();
+        label_30->raise();
+        refreshOrderButton->raise();
+        orderbutton->raise();
+        orderlabel1->raise();
+        orderlabel2->raise();
+        orderlabel3->raise();
+        orderlabel4->raise();
+        orderEdit1->raise();
+        orderEdit2->raise();
+        orderEdit3->raise();
+        orderEdit4->raise();
+        deviceEdit->raise();
+        nameEdit2->raise();
+        devicelabel->raise();
+        namelabel->raise();
+        deviceSearch->raise();
+
+        retranslateUi(Widget);
+
+        QMetaObject::connectSlotsByName(Widget);
+    } // setupUi
+
+    void retranslateUi(QWidget *Widget)
+    {
+        Widget->setWindowTitle(QApplication::translate("Widget", "\346\225\260\346\215\256\345\272\223\347\256\241\347\220\206\347\263\273\347\273\237", nullptr));
+        label->setText(QApplication::translate("Widget", "\346\266\210\346\201\257\357\274\232", nullptr));
+        label_2->setText(QApplication::translate("Widget", "\345\211\215\345\217\260\350\256\276\345\244\207\345\210\227\350\241\250", nullptr));
+        Check->setText(QApplication::translate("Widget", "\346\237\245\347\234\213", nullptr));
+        BreakOFF->setText(QApplication::translate("Widget", "\346\226\255\345\274\200\350\277\236\346\216\245", nullptr));
+        label_3->setText(QApplication::translate("Widget", "\347\212\266\346\200\201", nullptr));
+        label_4->setText(QApplication::translate("Widget", "\347\275\221\347\273\234", nullptr));
+        label_5->setText(QApplication::translate("Widget", "\350\277\233\347\250\213\345\217\267", nullptr));
+        label_6->setText(QApplication::translate("Widget", "\350\277\236\346\216\245\346\225\260\351\207\217\357\274\232", nullptr));
+        Count->setText(QApplication::translate("Widget", "0", nullptr));
+        label_7->setText(QApplication::translate("Widget", "\345\212\237\350\203\275\345\210\227\350\241\250", nullptr));
+        label_welcome->setText(QApplication::translate("Widget", "TextLabel", nullptr));
+        pushButton->setText(QApplication::translate("Widget", "\346\263\250\351\224\200", nullptr));
+        searchButton->setText(QApplication::translate("Widget", "\346\237\245\350\257\242", nullptr));
+        label_8->setText(QApplication::translate("Widget", "\345\256\242\346\210\267\345\247\223\345\220\215\357\274\232", nullptr));
+        label_9->setText(QApplication::translate("Widget", "\350\265\267\345\247\213\346\227\266\351\227\264\357\274\232", nullptr));
+        label_10->setText(QApplication::translate("Widget", "\347\273\210\346\255\242\346\227\266\351\227\264", nullptr));
+        addNewCustom->setText(QApplication::translate("Widget", "\346\267\273\345\212\240\346\226\260\347\224\250\346\210\267", nullptr));
+        label_11->setText(QApplication::translate("Widget", "\345\247\223\345\220\215\357\274\232", nullptr));
+        label_12->setText(QApplication::translate("Widget", "\347\224\265\350\257\235\357\274\232", nullptr));
+        label_13->setText(QApplication::translate("Widget", "\345\245\227\351\244\220\357\274\232", nullptr));
+        label_14->setText(QApplication::translate("Widget", "\351\207\221\351\242\235\357\274\232", nullptr));
+        nextButton->setText(QApplication::translate("Widget", "\344\270\213\344\270\200\346\255\245", nullptr));
+        ImageShow->setText(QString());
+
+        const bool __sortingEnabled = searchWidget->isSortingEnabled();
+        searchWidget->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem = searchWidget->item(0);
+        ___qlistwidgetitem->setText(QApplication::translate("Widget", "\345\256\242\346\210\267\344\277\241\346\201\257", nullptr));
+        QListWidgetItem *___qlistwidgetitem1 = searchWidget->item(1);
+        ___qlistwidgetitem1->setText(QApplication::translate("Widget", "\350\277\220\345\212\250\346\225\260\346\215\256", nullptr));
+        QListWidgetItem *___qlistwidgetitem2 = searchWidget->item(2);
+        ___qlistwidgetitem2->setText(QApplication::translate("Widget", "\347\231\273\345\275\225\350\256\260\345\275\225", nullptr));
+        searchWidget->setSortingEnabled(__sortingEnabled);
+
+        label_15->setText(QApplication::translate("Widget", "face_ID:", nullptr));
+        customlabel->setText(QApplication::translate("Widget", "TextLabel", nullptr));
+        customlabel_2->setText(QApplication::translate("Widget", "TextLabel", nullptr));
+        customlabel_3->setText(QApplication::translate("Widget", "TextLabel", nullptr));
+        customlabel_4->setText(QApplication::translate("Widget", "TextLabel", nullptr));
+        customlabel_5->setText(QApplication::translate("Widget", "TextLabel", nullptr));
+        customlabel_6->setText(QString());
+        showType->setItemText(0, QApplication::translate("Widget", "\350\241\250\346\240\274", nullptr));
+        showType->setItemText(1, QApplication::translate("Widget", "\345\277\203\347\216\207/\344\275\223\346\270\251", nullptr));
+        showType->setItemText(2, QApplication::translate("Widget", "\350\241\214\350\270\252", nullptr));
+
+        loginType->setItemText(0, QApplication::translate("Widget", "\346\263\250\345\206\214", nullptr));
+        loginType->setItemText(1, QApplication::translate("Widget", "\350\256\244\350\257\201", nullptr));
+
+        refreshCustom->setText(QApplication::translate("Widget", "\350\200\201\347\224\250\346\210\267\345\217\230\346\233\264", nullptr));
+        fixCustom->setText(QApplication::translate("Widget", "\344\277\256\346\224\271\344\277\241\346\201\257", nullptr));
+        addmoneyCustom->setText(QApplication::translate("Widget", "\345\205\205\345\200\274", nullptr));
+        deleteCustom->setText(QApplication::translate("Widget", "\345\210\240\351\231\244\345\256\242\346\210\267", nullptr));
+        freezeCustom->setText(QApplication::translate("Widget", "\345\206\273\347\273\223", nullptr));
+
+        const bool __sortingEnabled1 = deviceMenu->isSortingEnabled();
+        deviceMenu->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem3 = deviceMenu->item(0);
+        ___qlistwidgetitem3->setText(QApplication::translate("Widget", "\345\211\215\345\217\260\350\256\276\345\244\207\347\256\241\347\220\206", nullptr));
+        QListWidgetItem *___qlistwidgetitem4 = deviceMenu->item(1);
+        ___qlistwidgetitem4->setText(QApplication::translate("Widget", "\345\220\216\347\253\257\350\256\276\345\244\207\347\256\241\347\220\206", nullptr));
+        QListWidgetItem *___qlistwidgetitem5 = deviceMenu->item(2);
+        ___qlistwidgetitem5->setText(QApplication::translate("Widget", "\350\256\276\345\244\207\345\256\232\344\275\215", nullptr));
+        deviceMenu->setSortingEnabled(__sortingEnabled1);
+
+        label_16->setText(QApplication::translate("Widget", "\344\275\223\346\270\251\357\274\232", nullptr));
+        label_17->setText(QApplication::translate("Widget", "\346\234\200\345\244\247\345\200\274\357\274\232", nullptr));
+        label_18->setText(QApplication::translate("Widget", "\345\271\263\345\235\207\345\200\274\357\274\232", nullptr));
+        label_19->setText(QApplication::translate("Widget", "\346\234\200\345\260\217\345\200\274\357\274\232", nullptr));
+        label_20->setText(QApplication::translate("Widget", "\345\277\203\347\216\207\357\274\232", nullptr));
+        label_21->setText(QApplication::translate("Widget", "\346\234\200\345\244\247\345\200\274\357\274\232", nullptr));
+        label_22->setText(QApplication::translate("Widget", "\345\271\263\345\235\207\345\200\274\357\274\232", nullptr));
+        label_23->setText(QApplication::translate("Widget", "\346\234\200\345\260\217\345\200\274\357\274\232", nullptr));
+        label_24->setText(QApplication::translate("Widget", "\350\275\250\350\277\271\344\277\241\346\201\257\357\274\232", nullptr));
+        routeButton->setText(QApplication::translate("Widget", "\350\275\250\350\277\271\351\207\215\347\216\260", nullptr));
+        label_25->setText(QApplication::translate("Widget", "\345\245\227\351\244\220\345\210\227\350\241\250:", nullptr));
+
+        const bool __sortingEnabled2 = sysManager->isSortingEnabled();
+        sysManager->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem6 = sysManager->item(0);
+        ___qlistwidgetitem6->setText(QApplication::translate("Widget", "\345\245\227\351\244\220\347\256\241\347\220\206", nullptr));
+        QListWidgetItem *___qlistwidgetitem7 = sysManager->item(1);
+        ___qlistwidgetitem7->setText(QApplication::translate("Widget", "\345\221\230\345\267\245\347\256\241\347\220\206", nullptr));
+        sysManager->setSortingEnabled(__sortingEnabled2);
+
+        ordershow->setHtml(QApplication::translate("Widget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:14pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;\"><br /></p></body></html>", nullptr));
+        label_26->setText(QApplication::translate("Widget", "\351\200\211\346\213\251\346\227\266\351\227\264\346\256\265\357\274\232", nullptr));
+        label_27->setText(QApplication::translate("Widget", "-", nullptr));
+        ordershow2->setHtml(QApplication::translate("Widget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;\"><br /></p></body></html>", nullptr));
+        ordershow3->setHtml(QApplication::translate("Widget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;\"><br /></p></body></html>", nullptr));
+        orderList->setText(QApplication::translate("Widget", "\350\256\242\345\215\225\345\210\227\350\241\250", nullptr));
+        orderSearch->setText(QApplication::translate("Widget", "\350\256\242\345\215\225\346\237\245\350\257\242", nullptr));
+        orderAnalysis->setText(QApplication::translate("Widget", "\351\224\200\345\224\256\347\273\237\350\256\241", nullptr));
+        label_28->setText(QApplication::translate("Widget", "\345\256\242\346\210\267\345\247\223\345\220\215\357\274\232", nullptr));
+        label_29->setText(QApplication::translate("Widget", "face_ID\357\274\232", nullptr));
+        searchButton2->setText(QApplication::translate("Widget", "\346\237\245\350\257\242", nullptr));
+        comboType2->setItemText(0, QApplication::translate("Widget", "\345\205\250\351\203\250", nullptr));
+        comboType2->setItemText(1, QApplication::translate("Widget", "\346\263\250\345\206\214", nullptr));
+        comboType2->setItemText(2, QApplication::translate("Widget", "\350\256\244\350\257\201", nullptr));
+
+        label_30->setText(QApplication::translate("Widget", "\346\237\245\350\257\242\347\261\273\345\236\213\357\274\232", nullptr));
+        refreshOrderButton->setText(QApplication::translate("Widget", "\344\277\256\346\224\271\345\245\227\351\244\220", nullptr));
+        newAccount->setText(QApplication::translate("Widget", "\346\226\260\345\242\236\350\264\246\345\217\267", nullptr));
+        refreshAccount->setText(QApplication::translate("Widget", "\344\277\256\346\224\271\350\264\246\346\210\267", nullptr));
+        deletAccount->setText(QApplication::translate("Widget", "\345\210\240\351\231\244\350\264\246\345\217\267", nullptr));
+        orderbutton->setText(QApplication::translate("Widget", "\347\241\256\350\256\244", nullptr));
+        orderlabel1->setText(QApplication::translate("Widget", "\345\245\227\351\244\220\351\207\221\351\242\235\357\274\232", nullptr));
+        orderlabel2->setText(QApplication::translate("Widget", "\345\245\227\351\244\220\346\254\241\346\225\260\357\274\232", nullptr));
+        orderlabel3->setText(QApplication::translate("Widget", "\346\210\252\346\255\242\346\234\237\351\231\220\357\274\232", nullptr));
+        orderlabel4->setText(QApplication::translate("Widget", "\345\245\227\351\244\220\350\257\264\346\230\216\357\274\232", nullptr));
+        devicelabel->setText(QApplication::translate("Widget", "\350\256\276\345\244\207\347\274\226\345\217\267\357\274\232", nullptr));
+        namelabel->setText(QApplication::translate("Widget", "\345\247\223\345\220\215\357\274\232", nullptr));
+        deviceSearch->setText(QApplication::translate("Widget", "\346\237\245\350\257\242", nullptr));
+        newOrderButton->setText(QApplication::translate("Widget", "\346\226\260\345\242\236\345\245\227\351\244\220", nullptr));
+        deleteOrderButton->setText(QApplication::translate("Widget", "\345\210\240\351\231\244\345\245\227\351\244\220", nullptr));
+    } // retranslateUi
+
+};
+
+namespace Ui {
+    class Widget: public Ui_Widget {};
+} // namespace Ui
+
+QT_END_NAMESPACE
+
+#endif // UI_WIDGET_H
